@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MW20200529 Board</title>
+<style>
+body {background: black; text-align: center; color: white;}
+h1 {text-align: center; color: white;}
+.center img {margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#all {z-index: 3;}
+#top {z-index: 2;}
+#bot {z-index: 1;}
+</style>
+</head>
+<body>
+<h1>MW20200529 Board</h1>
+<script>
+function DoCheckUncheckDisplay(d,dchecked,dunchecked)
+{
+   if( d.checked == true )
+   {
+      document.getElementById(dchecked).style.display = "block";
+      document.getElementById(dunchecked).style.display = "none";
+   }
+   else
+   {
+      document.getElementById(dchecked).style.display = "none";
+      document.getElementById(dunchecked).style.display = "block";
+   }
+}
+</script>
+<div>
+Display All Layers: <input type="checkbox" onclick="DoCheckUncheckDisplay(this,'all','')" style="margin:0;" checked><br>
+Display Top Layer: <input type="checkbox" onclick="DoCheckUncheckDisplay(this,'top','')" style="margin:0;" checked><br>
+Display Bottom Layer: <input type="checkbox" onclick="DoCheckUncheckDisplay(this,'bot','')" style="margin:0;" checked><br>
+</div>
+<div class="center">
+  <img id="all" src="MW20200529_0003_All.png"/>
+  <img id="top" src="MW20200529_0000_Top.png"/>
+  <img id="bot" src="MW20200529_0001_Bot.png"/>
+</div>
+</body>
+</html>
